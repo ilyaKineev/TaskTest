@@ -47,7 +47,7 @@ public class TaskController {
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PatchMapping(value = "/task/{id}")
+    @PostMapping(value = "/task/{id}")
     public ResponseEntity<?> update(@PathVariable(name = "id") long id, @RequestBody Task task) {
         boolean answer = taskService.updateTask(id,task);
         return answer != false
